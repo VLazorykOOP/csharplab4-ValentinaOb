@@ -188,6 +188,295 @@ class ITriangle{
 
 }
 
+class VectorDecimal{
+  protected decimal [] ArrayDecimal; 
+  protected uint num; 
+  protected int codeError;
+  protected static uint num_vec;
+
+  public void constr(){
+    ArrayDecimal[1]=0;
+  }
+  public void constr1(uint s){
+    num = s;
+  }
+  public void constr2(uint s, int k){
+    ArrayDecimal[s]=k;
+  }
+  ~VectorDecimal(){
+    Console.WriteLine("Destructor");
+  }
+  public void arinp(){
+      Console.WriteLine("Number of element: ");
+      int n = Convert.ToInt32(Console.ReadLine());
+      for(int i =0;i<n;i++){
+      ArrayDecimal[i]=Convert.ToDecimal(Console.ReadLine());
+  }}
+  public decimal[] arout(){
+      return ArrayDecimal;
+  }
+  public decimal[] elem(decimal k){
+    for(int i =0;i<ArrayDecimal.Length;i++){
+    ArrayDecimal [i] = k;
+    }
+    return ArrayDecimal;
+  }
+  public static uint numb(decimal [] array){
+    num_vec = (uint)(array.Length);
+    return num_vec;
+  }
+   public int Arlen{
+    get{
+      return ArrayDecimal.Length;
+    }
+  }  
+
+  public int Er{
+    get{
+      return codeError;
+    }
+    set{
+      codeError = value;
+    }
+  }  
+
+  public decimal this[int ind]{
+    get{
+      if(ind<0||ind>=ArrayDecimal.Length) {
+        this.codeError=1;
+        return codeError;}
+      return ArrayDecimal [ind];
+    }
+    
+  }
+
+  public static VectorDecimal operator++ (VectorDecimal t) {
+    for(int i =0;i<t.ArrayDecimal.Length;i++){
+    t.ArrayDecimal [i] += 1;
+    }
+    return t;
+  }
+
+  public static VectorDecimal operator-- (VectorDecimal t) {
+    for(int i =0;i<t.ArrayDecimal.Length;i++){
+    t.ArrayDecimal [i] -= 1;
+    }
+    return t;
+  }
+
+  public static explicit operator bool(VectorDecimal t) {
+    int k=0;
+    for(int i =0;i<t.ArrayDecimal.Length;i++){
+      if(t.ArrayDecimal[i] ==0) k++;
+    }
+    return (t.num != 0)||(k == 0);
+  }
+
+  public static bool operator !(VectorDecimal t) {
+    return (t.num != 0);
+  }
+ 
+  public static VectorDecimal operator ~(VectorDecimal t) {
+    for (int i = 0; i < t.ArrayDecimal.Length; i++) {
+      t.ArrayDecimal[i] = (int)(t.ArrayDecimal[i]);
+    }
+    return t;
+  }
+
+  public static VectorDecimal operator +(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+        t.ArrayDecimal[i] += c.ArrayDecimal[i];
+      return t;
+    }
+    return t;
+  }
+
+  public static VectorDecimal operator +(VectorDecimal t, int c){
+    for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+      t.ArrayDecimal[i] += c;
+    return t;
+  }
+
+  public static VectorDecimal operator -(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+        t.ArrayDecimal[i] -= c.ArrayDecimal[i];
+      return t;
+    }
+    return t;
+  }
+
+  public static VectorDecimal operator -(VectorDecimal t, int c){
+    for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+      t.ArrayDecimal[i] += c;
+    return t;
+  }
+
+  public static VectorDecimal operator *(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+        t.ArrayDecimal[i] *= c.ArrayDecimal[i];
+      return t;
+    }
+    return t;
+  }
+
+  public static VectorDecimal operator *(VectorDecimal t, int c){
+    for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+      t.ArrayDecimal[i] *= c;
+    return t;
+  }
+
+  public static VectorDecimal operator /(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+        t.ArrayDecimal[i] /= c.ArrayDecimal[i];
+      return t;
+    }
+    return t;
+  }
+
+  public static VectorDecimal operator /(VectorDecimal t, int c){
+    for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+      t.ArrayDecimal[i] /= c;
+    return t;
+  }
+
+  public static VectorDecimal operator %(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+        t.ArrayDecimal[i] %= c.ArrayDecimal[i];
+      return t;
+    }
+    return t;
+  }
+
+  public static VectorDecimal operator %(VectorDecimal t, int c){
+    for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+      t.ArrayDecimal[i] %= c;
+    return t;
+  }
+
+ public static VectorDecimal operator |(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+        t.ArrayDecimal[i] =(char)(t.ArrayDecimal[i]) | (char)(c.ArrayDecimal[i]);
+      return t;
+    }
+    return t;
+  }
+
+  public static VectorDecimal operator |(VectorDecimal t, int c){
+    for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+      t.ArrayDecimal[i] = (char)(t.ArrayDecimal[i]) | c;
+    return t;
+  }
+
+  public static VectorDecimal operator ^(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+        t.ArrayDecimal[i] =(char)(t.ArrayDecimal[i]) ^ (char)(c.ArrayDecimal[i]);
+      return t;
+    }
+    return t;
+  }
+
+  public static VectorDecimal operator ^(VectorDecimal t, int c){
+    for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+      t.ArrayDecimal[i] = (char)(t.ArrayDecimal[i]) ^ c;
+    return t;
+  }
+
+  public static VectorDecimal operator >>(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+        t.ArrayDecimal[i] = t.ArrayDecimal[i] >> c.ArrayDecimal[i];
+      return t;
+    }
+    return t;
+    
+  }
+
+  public static VectorDecimal operator >> (VectorDecimal t, int c){
+    for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+      t.ArrayDecimal[i] = (char)(t.ArrayDecimal[i]) >> c;
+    return t;
+  }
+ 
+  public static VectorDecimal operator <<(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+        t.ArrayDecimal[i] =(char)(t.ArrayDecimal[i]) ^ (char)(c.ArrayDecimal[i]);
+      return t;
+    }
+    return t;
+  }
+
+  public static VectorDecimal operator << (VectorDecimal t, int c){
+    for (int i = 0; i < t.ArrayDecimal.Length; ++i)
+      t.ArrayDecimal[i] = (char)(t.ArrayDecimal[i]) << c;
+    return t;
+  }
+
+  public static bool operator ==(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for(int i =0;i<t.ArrayDecimal.Length;i++){
+      if(t.ArrayDecimal[i] == c.ArrayDecimal[i]) return true;
+      else return false;
+      }
+    }
+    return true;
+  }
+
+  public static bool operator !=(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for(int i =0;i<t.ArrayDecimal.Length;i++){
+      if(t.ArrayDecimal[i] != c.ArrayDecimal[i]) return true;
+      else return false;}
+    }
+    return true;
+  }
+
+  public static bool operator >(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for(int i =0;i<t.ArrayDecimal.Length;i++){
+      if(t.ArrayDecimal[i] > c.ArrayDecimal[i]) return true;
+      else return false;
+      }
+    }
+    return true;
+  }
+
+  public static bool operator >=(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for(int i =0;i<t.ArrayDecimal.Length;i++){
+      if(t.ArrayDecimal[i] >= c.ArrayDecimal[i]) return true;
+      else return false;
+      }
+    }
+    return true;
+  }
+
+  public static bool operator <(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for(int i =0;i<t.ArrayDecimal.Length;i++){
+      if(t.ArrayDecimal[i] < c.ArrayDecimal[i]) return true;
+      else return false;}
+    }
+    return true;
+  }
+
+  public static bool operator <=(VectorDecimal t, VectorDecimal c){
+    if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
+      for(int i =0;i<t.ArrayDecimal.Length;i++){
+      if(t.ArrayDecimal[i] <= c.ArrayDecimal[i]) return true;
+      else return false;
+      }
+    }
+    return true;
+  }
 
 
+}
 }
