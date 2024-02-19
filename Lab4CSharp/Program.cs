@@ -77,6 +77,7 @@ static void task1()
     Console.Write("\n--: "+ (first--).show());
 
     Console.Write("\nBool: "+ (bool)first);
+    Console.Write("\n*: "+ (first*2).show());
     
     string str= (string)first;
     Console.Write("\nStr: "+ str);
@@ -186,4 +187,7 @@ class ITriangle{
 
 
 }
+
+
+
 }
