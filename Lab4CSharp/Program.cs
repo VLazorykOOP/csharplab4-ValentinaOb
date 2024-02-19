@@ -1,42 +1,189 @@
-﻿// See https://aka.ms/new-console-template for more information
-/// <summary>
-///  Top-level statements 
-///  Код програми (оператори)  вищого рівня
-/// </summary>
-///
-Console.WriteLine("Lab4 C# ");
-AnyFunc();
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
-/// <summary>
-/// 
-///  Top-level statements must precede namespace and type declarations.
-/// At the top-level methods/functions can be defined and used
-/// На верхньому рівні можна визначати та використовувати методи/функції
-/// </summary>
-void AnyFunc()
+namespace Pr{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("\nLab 3");
+      
+      Console.WriteLine("Choose task: ");
+      int s = Convert.ToInt32(Console.ReadLine());
+
+  switch(s){
+    case 1: { task1();  break;}
+    case 2: { task2();  break;}
+  }
+      
+    }
+
+
+
+static void task1()
 {
-    Console.WriteLine(" Some function in top-level");
+    Console.WriteLine("\nTask1");
+    Console.Write("Numner of triangle: ");
+    int n = Convert.ToInt32(Console.ReadLine());
+    string c ="Blue";
+
+    for(int f = 0;f<n;f++)
+    {Console.Write("\n\n  Triangle "+(f+1));
+      int [] a=new int[2];
+
+    Console.Write("\nSides: ");
+    for(int i = 0;i<a.Length;i++)
+    {
+      a[i]= Convert.ToInt32(Console.ReadLine());
+    }
+    Console.Write("Color: ");
+     c=Convert.ToString(Console.ReadLine());
+
+    ITriangle first = new ITriangle ();
+    first.col(c);
+    int p =first.perimeter(a[0],a[1]);
+    Console.Write("\nPerimeter: "+p);
+    double s =first.area(a[0],a[1],p);
+    Console.Write("\nS: "+s);
+    bool t =first.correct(a[0],a[1]);
+    Console.Write("\nCorrect: "+t);
+
+
+    Console.Write("\nChange sides: ");
+    int [] k=new int[2];
+    for(int i = 0;i<k.Length;i++)
+    {
+      k[i]= Convert.ToInt32(Console.ReadLine());
+    }
+    int [] b={k[0],k[1]};
+    first.Sidegr=b;
+    b=first.Sidegr;
+
+    Console.Write("\nSides: ");
+    for(int i = 0;i<b.Length;i++)
+    {
+      Console.Write(+b[i]+" ");
+    }
+    Console.Write("\nColor: "+ first.Colorgr);
+    
+    Console.Write("\nIndex: ");
+    int ind = Convert.ToInt32(Console.ReadLine());   
+    string ch=first[ind];
+    if(ch=="0") Console.Write("\nError ");
+    Console.Write("So: "+ ch);
+
+    Console.Write("\n++: "+ (first++).show());
+    Console.Write("\n--: "+ (first--).show());
+
+    Console.Write("\nBool: "+ (bool)first);
+    
+    string str= (string)first;
+    Console.Write("\nStr: "+ str);
+    ITriangle second = (ITriangle)str;
+    Console.Write("\nITriangle: "+ second.show());
+    
+    } 
 }
-Console.WriteLine("Problems 1 ");
-AnyFunc();
-//  приклад класів
-UserClass cl = new UserClass();
-cl.Name = " UserClass top-level ";
-Lab4CSharp.UserClass cl2 = new Lab4CSharp.UserClass();
-cl2.Name = " UserClass namespace Lab4CSharp ";
-Console.WriteLine(cl + "   " + cl2 + "   ");
 
-
-
-/// <summary>
-/// 
-/// Top-level statements must precede namespace and type declarations.
-/// Оператори верхнього рівня мають передувати оголошенням простору імен і типу.
-/// Створення класу(ів) або оголошенням простору імен є закіченням  іструкцій верхнього рівня
-/// 
-/// </summary>
-
-class UserClass
+static void task2()
 {
-    public string Name { get; set; }
-};
+    Console.WriteLine("\nTask2");
+}
+  }
+class ITriangle{
+  protected int a, b;
+  protected string c;
+
+  public int [] sides(int sa, int sb){
+    int [] a = {sa,sb};
+    return a;   
+  }
+  public int perimeter(int sa, int sb){
+    int p=sa+2*sb;
+    return p;   
+  }
+  public double area (int sa, int sb, int p1){
+    int p=p1/2;
+    double s= Math.Sqrt(p*(p1-sa)*(p1-sb)*(p1-sb));
+    return s;   
+  }
+  public bool correct (int sa, int sb){
+    if(sa==sb) return true; 
+    else return false;
+  }
+
+  public void col(string color){
+    this.c=color;
+  }
+  public string show(){
+    return "A: "+a+" \n    B: "+b+"  \n    C: "+c;
+  }
+  public int[] Sidegr{
+    get{
+      int [] k= {this.a,this.b};
+      return k;
+    }
+
+    set{
+      a=value[0];
+      b=value[1];
+    }
+  }
+  public string Colorgr{
+    get{
+      string s=this.c;
+      return s;
+    }
+  }
+
+  public string this[int ind]{
+    get{
+      if(ind==0) return $"{a}";
+      else if(ind==1) return $"{b}";
+      else if(ind==2) return c;
+      else return "0";
+    }
+    
+  }
+
+  public static ITriangle operator++ (ITriangle t) {
+         t.a += 1;
+         t.b += 1;
+         return t;
+      }
+
+  public static ITriangle operator-- (ITriangle t) {
+         t.a -= 1;
+         t.b -= 1;
+         return t;
+  }
+
+  public static explicit operator bool(ITriangle t) {
+    return (t.a != 0)&&(t.b != 0);
+  }
+ 
+  
+  public static ITriangle operator* (ITriangle t,int scal) {
+    ITriangle k = new ITriangle();
+    k.a = t.a*scal;
+    k.b = t.b*scal;
+    return k;
+  }
+
+  public static explicit operator string(ITriangle t) {
+    return $"{t.a}, {t.b}, {t.c}";
+  }
+
+  public static explicit operator ITriangle(string str) {
+    ITriangle t = new ITriangle();
+    string[] s = str.Split(',');
+    t.a = int.Parse(s[0].Trim('(', ')'));
+    t.b = int.Parse(s[1]);
+    t.c = s[2];
+    return t;
+  }
+
+
+}
+}
