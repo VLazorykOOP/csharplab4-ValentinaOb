@@ -183,9 +183,9 @@ static void task2()
  
 static void task3()
 {
-    Console.WriteLine("\nTask2");
+    Console.WriteLine("\nTask3");
     DemicalMatrix v = new DemicalMatrix(5,6,4);
-    DemicalMatrix v1 = new DemicalMatrix(5,3,6);
+    DemicalMatrix v1 = new DemicalMatrix(5,3,3);
     Console.WriteLine("\nV: ");
     v.sh();
     Console.WriteLine("\nV1: ");
@@ -217,8 +217,10 @@ static void task3()
     v.sh();
     Console.WriteLine("\nSize=0 || a[i]=0: "+(bool)v);
     Console.WriteLine("\nSize!=0: "+!v);
-    Console.WriteLine("\n ~ : "+~v);
-    DemicalMatrix v3 = v+v1;
+    DemicalMatrix v3 = ~v;
+    Console.WriteLine("\n ~ : ");
+    v3.arout();
+    v3 = v+v1;
     Console.WriteLine("\nV + V1: ");
     v3.arout();
     v3 = v+5;
@@ -411,6 +413,7 @@ class VectorDecimal{
   public void arinp(){
       Console.WriteLine("Number of element: ");
       int n = Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("Input: ");
       for(int i =0;i<n;i++){
       ArrayDecimal[i]=Convert.ToDecimal(Console.ReadLine());
   }}
@@ -714,7 +717,7 @@ class DemicalMatrix{
     for(int i =0;i<n;i++)
       for(int j =0;j<m;j++){
         Console.Write(DCArray[i,j]+" ");}
-    Console.WriteLine("N: "+n);
+    Console.WriteLine("\nN: "+n);
     Console.WriteLine("M: "+m);
     Console.WriteLine("CodeError: "+codeError);
     Console.WriteLine("Num_mf: "+num_mf);
@@ -723,8 +726,11 @@ class DemicalMatrix{
     Console.WriteLine("Destructor");
   }
   public void arinp(){
-      Console.WriteLine("Number of element: ");
+      Console.WriteLine("Number of element i: ");
       int n = Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("Number of element j: ");
+      int m = Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("Input: ");
       for(int i =0;i<n;i++) 
       for(int j =0;j<m;j++){
       DCArray[i,j]=Convert.ToDecimal(Console.ReadLine());
@@ -938,7 +944,7 @@ class DemicalMatrix{
   public static bool operator ==(DemicalMatrix t, DemicalMatrix c){
     if((t.n==c.n)&&(t.m==c.m)){
       for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
-      if(t.DCArray[i,j] == t.DCArray[i,j]) return true;
+      if(t.DCArray[i,j] == c.DCArray[i,j]) return true;
       else return false;
       }
     }
@@ -948,7 +954,7 @@ class DemicalMatrix{
   public static bool operator !=(DemicalMatrix t, DemicalMatrix c){
     if((t.n==c.n)&&(t.m==c.m)){
       for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
-      if(t.DCArray[i,j] != t.DCArray[i,j]) return true;
+      if(t.DCArray[i,j] != c.DCArray[i,j]) return true;
       else return false;}
     }
     return true;
@@ -957,7 +963,7 @@ class DemicalMatrix{
   public static bool operator >(DemicalMatrix t, DemicalMatrix c){
     if((t.n==c.n)&&(t.m==c.m)){
       for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
-      if(t.DCArray[i,j] > t.DCArray[i,j]) return true;
+      if(t.DCArray[i,j] > c.DCArray[i,j]) return true;
       else return false;
       }
     }
@@ -967,7 +973,7 @@ class DemicalMatrix{
   public static bool operator >=(DemicalMatrix t, DemicalMatrix c){
     if((t.n==c.n)&&(t.m==c.m)){
       for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
-      if(t.DCArray[i,j] >= t.DCArray[i,j]) return true;
+      if(t.DCArray[i,j] >= c.DCArray[i,j]) return true;
       else return false;
       }
     }
@@ -977,7 +983,7 @@ class DemicalMatrix{
   public static bool operator <(DemicalMatrix t, DemicalMatrix c){
     if((t.n==c.n)&&(t.m==c.m)){
       for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
-      if(t.DCArray[i,j] < t.DCArray[i,j]) return true;
+      if(t.DCArray[i,j] < c.DCArray[i,j]) return true;
       else return false;
       }
     }
@@ -987,7 +993,7 @@ class DemicalMatrix{
   public static bool operator <=(DemicalMatrix t, DemicalMatrix c){
     if((t.n==c.n)&&(t.m==c.m)){
       for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
-      if(t.DCArray[i,j] <= t.DCArray[i,j]) return true;
+      if(t.DCArray[i,j] <= c.DCArray[i,j]) return true;
       else return false;
       }
     }
