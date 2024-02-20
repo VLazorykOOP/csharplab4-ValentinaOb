@@ -15,6 +15,7 @@ namespace Pr{
   switch(s){
     case 1: { task1();  break;}
     case 2: { task2();  break;}
+    case 3: { task3();  break;}
   }
       
     }
@@ -90,7 +91,190 @@ static void task1()
 static void task2()
 {
     Console.WriteLine("\nTask2");
+    VectorDecimal v = new VectorDecimal(5,6);
+    VectorDecimal v1 = new VectorDecimal(5,3);
+    Console.WriteLine("\nV: ");
+    v.sh();
+    Console.WriteLine("\nV1: ");
+    v1.sh();
+
+    Console.WriteLine("\nInp: ");
+    v.arinp();
+    Console.WriteLine("\nInp1: ");
+    v.arinp();
+    Console.WriteLine("\nOut: ");
+    v.arout();
+    Console.WriteLine("\nOut1: ");
+    v.arout();
+    Console.WriteLine("\nElem 1: ");
+    v.elem(1);
+    v.sh();
+    int n = v.Arlen;
+    Console.WriteLine("\nArlen: "+n);
+    Console.WriteLine("\nInput code error: ");
+    int e = Convert.ToInt32(Console.ReadLine());
+    v.Er=e;
+    Console.WriteLine("\nCode error: "+v.Er);
+    Console.WriteLine("\nInput index: ");
+    int ind = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Element: "+v[ind]);
+    v++;
+    v.sh();
+    v--;
+    v.sh();
+    Console.WriteLine("\nSize=0 || a[i]=0: "+(bool)v);
+    Console.WriteLine("\nSize!=0: "+!v);
+    Console.WriteLine("\n ~ : "+~v);
+    VectorDecimal v3 = v+v1;
+    Console.WriteLine("\nV + V1: ");
+    v3.arout();
+    v3 = v+5;
+    Console.WriteLine("\nV + 5: ");
+    v3.arout();
+    v3 = v-v1;
+    Console.WriteLine("\nV - V1: ");
+    v3.arout();
+    v3 = v-5;
+    Console.WriteLine("\nV - 5: ");
+    v3.arout();
+    v3 = v*v1;
+    Console.WriteLine("\nV * V1: ");
+    v3.arout();
+    v3 = v*5;
+    Console.WriteLine("\nV * 5: ");
+    v3.arout();
+    v3 = v/v1;
+    Console.WriteLine("\nV / V1: ");
+    v3.arout();
+    v3 = v/5;
+    Console.WriteLine("\nV / 5: ");
+    v3.arout();
+    v3 = v%v1;
+    Console.WriteLine("\nV % V1: ");
+    v3.arout();
+    v3 = v%5;
+    Console.WriteLine("\nV % 5: ");
+    v3.arout();
+    v3 = v|v1;
+    Console.WriteLine("\nV | V1: ");
+    v3.arout();
+    v3 = v|5;
+    Console.WriteLine("\nV | 5: ");
+    v3.arout();
+    v3 = v^v1;
+    Console.WriteLine("\nV ^ V1: ");
+    v3.arout();
+    v3 = v^5;
+    Console.WriteLine("\nV ^ 5: ");
+    v3.arout();
+    v3 = v<<5;
+
+    Console.WriteLine("\nV << 5: ");
+    v3.arout();
+
+    Console.WriteLine("\nV == V1: "+(v==v1));
+    Console.WriteLine("\nV != V1: "+(v!=v1));
+    Console.WriteLine("\nV > V1: "+(v>v1));
+    Console.WriteLine("\nV >= V1: "+(v>=v1));
+    Console.WriteLine("\nV < V1: "+(v<v1));
+    Console.WriteLine("\nV <= V1: "+(v<=v1));
+
 }
+ 
+static void task3()
+{
+    Console.WriteLine("\nTask2");
+    DemicalMatrix v = new DemicalMatrix(5,6,4);
+    DemicalMatrix v1 = new DemicalMatrix(5,3,6);
+    Console.WriteLine("\nV: ");
+    v.sh();
+    Console.WriteLine("\nV1: ");
+    v1.sh();
+
+    Console.WriteLine("\nInp: ");
+    v.arinp();
+    Console.WriteLine("\nInp1: ");
+    v.arinp();
+    Console.WriteLine("\nOut: ");
+    v.arout();
+    Console.WriteLine("\nOut1: ");
+    v.arout();
+    Console.WriteLine("\nElem 1: ");
+    v.elem(1);
+    v.sh();
+    int n = v.Arlen;
+    Console.WriteLine("\nArlen: "+n);
+    Console.WriteLine("\nInput code error: ");
+    int e = Convert.ToInt32(Console.ReadLine());
+    v.Er=e;
+    Console.WriteLine("\nCode error: "+v.Er);
+    Console.WriteLine("\nInput index: ");
+    int ind = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Element: "+v[ind]);
+    v++;
+    v.sh();
+    v--;
+    v.sh();
+    Console.WriteLine("\nSize=0 || a[i]=0: "+(bool)v);
+    Console.WriteLine("\nSize!=0: "+!v);
+    Console.WriteLine("\n ~ : "+~v);
+    DemicalMatrix v3 = v+v1;
+    Console.WriteLine("\nV + V1: ");
+    v3.arout();
+    v3 = v+5;
+    Console.WriteLine("\nV + 5: ");
+    v3.arout();
+    v3 = v-v1;
+    Console.WriteLine("\nV - V1: ");
+    v3.arout();
+    v3 = v-5;
+    Console.WriteLine("\nV - 5: ");
+    v3.arout();
+    v3 = v*v1;
+    Console.WriteLine("\nV * V1: ");
+    v3.arout();
+    v3 = v*5;
+    Console.WriteLine("\nV * 5: ");
+    v3.arout();
+    v3 = v/v1;
+    Console.WriteLine("\nV / V1: ");
+    v3.arout();
+    v3 = v/5;
+    Console.WriteLine("\nV / 5: ");
+    v3.arout();
+    v3 = v%v1;
+    Console.WriteLine("\nV % V1: ");
+    v3.arout();
+    v3 = v%5;
+    Console.WriteLine("\nV % 5: ");
+    v3.arout();
+    v3 = v|v1;
+    Console.WriteLine("\nV | V1: ");
+    v3.arout();
+    v3 = v|5;
+    Console.WriteLine("\nV | 5: ");
+    v3.arout();
+    v3 = v^v1;
+    Console.WriteLine("\nV ^ V1: ");
+    v3.arout();
+    v3 = v^5;
+    Console.WriteLine("\nV ^ 5: ");
+    v3.arout();
+    v3 = v<<5;
+
+    Console.WriteLine("\nV << 5: ");
+    v3.arout();
+
+    Console.WriteLine("\nV == V1: "+(v==v1));
+    Console.WriteLine("\nV != V1: "+(v!=v1));
+    Console.WriteLine("\nV > V1: "+(v>v1));
+    Console.WriteLine("\nV >= V1: "+(v>=v1));
+    Console.WriteLine("\nV < V1: "+(v<v1));
+    Console.WriteLine("\nV <= V1: "+(v<=v1));
+
+}
+ 
+  
   }
 class ITriangle{
   protected int a, b;
@@ -194,14 +378,32 @@ class VectorDecimal{
   protected int codeError;
   protected static uint num_vec;
 
-  public void constr(){
-    ArrayDecimal[1]=0;
+  public VectorDecimal(){
+    ArrayDecimal =new decimal[1];
+    this.num = 1;
+    ArrayDecimal[0]=0;
   }
-  public void constr1(uint s){
-    num = s;
+  public VectorDecimal(uint s){
+    ArrayDecimal =new decimal[s];
+    this.num = s;
+    for (int i = 0; i < s; i++) {
+    ArrayDecimal[i]=0;
+    }
   }
-  public void constr2(uint s, int k){
-    ArrayDecimal[s]=k;
+  public VectorDecimal(uint s, int k){
+    ArrayDecimal =new decimal[s];
+    this.num = s;
+    for (int i = 0; i < s; i++) {
+    ArrayDecimal[i]=k;
+    }
+  }
+  public void sh(){
+    Console.WriteLine("Ar: ");
+    for(int i =0;i<ArrayDecimal.Length;i++){
+    Console.WriteLine(ArrayDecimal[i]+" ");}
+    Console.WriteLine("Num: "+num);
+    Console.WriteLine("CodeError: "+codeError);
+    Console.WriteLine("Num_v: "+num_vec);
   }
   ~VectorDecimal(){
     Console.WriteLine("Destructor");
@@ -212,8 +414,11 @@ class VectorDecimal{
       for(int i =0;i<n;i++){
       ArrayDecimal[i]=Convert.ToDecimal(Console.ReadLine());
   }}
-  public decimal[] arout(){
-      return ArrayDecimal;
+  public void arout(){
+
+    for (int i = 0; i < ArrayDecimal.Length; i++) {
+        Console.Write(ArrayDecimal[i]+" ");
+    }
   }
   public decimal[] elem(decimal k){
     for(int i =0;i<ArrayDecimal.Length;i++){
@@ -221,16 +426,11 @@ class VectorDecimal{
     }
     return ArrayDecimal;
   }
-  public static uint numb(decimal [] array){
-    num_vec = (uint)(array.Length);
-    return num_vec;
-  }
    public int Arlen{
     get{
       return ArrayDecimal.Length;
     }
   }  
-
   public int Er{
     get{
       return codeError;
@@ -309,7 +509,7 @@ class VectorDecimal{
 
   public static VectorDecimal operator -(VectorDecimal t, int c){
     for (int i = 0; i < t.ArrayDecimal.Length; ++i)
-      t.ArrayDecimal[i] += c;
+      t.ArrayDecimal[i] -= c;
     return t;
   }
 
@@ -387,7 +587,7 @@ class VectorDecimal{
       t.ArrayDecimal[i] = (char)(t.ArrayDecimal[i]) ^ c;
     return t;
   }
-
+/*
   public static VectorDecimal operator >>(VectorDecimal t, VectorDecimal c){
     if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
       for (int i = 0; i < t.ArrayDecimal.Length; ++i)
@@ -403,7 +603,7 @@ class VectorDecimal{
       t.ArrayDecimal[i] = (char)(t.ArrayDecimal[i]) >> c;
     return t;
   }
- 
+ /*
   public static VectorDecimal operator <<(VectorDecimal t, VectorDecimal c){
     if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
       for (int i = 0; i < t.ArrayDecimal.Length; ++i)
@@ -412,7 +612,7 @@ class VectorDecimal{
     }
     return t;
   }
-
+*/
   public static VectorDecimal operator << (VectorDecimal t, int c){
     for (int i = 0; i < t.ArrayDecimal.Length; ++i)
       t.ArrayDecimal[i] = (char)(t.ArrayDecimal[i]) << c;
@@ -471,6 +671,323 @@ class VectorDecimal{
     if(t.ArrayDecimal.Length==c.ArrayDecimal.Length){
       for(int i =0;i<t.ArrayDecimal.Length;i++){
       if(t.ArrayDecimal[i] <= c.ArrayDecimal[i]) return true;
+      else return false;
+      }
+    }
+    return true;
+  }
+
+
+}
+
+class DemicalMatrix{
+  protected decimal [,] DCArray; 
+  protected uint n,m; 
+  protected int codeError;
+  protected static int num_mf;
+  public DemicalMatrix(){
+    DCArray =new decimal[1,1];
+    this.n = 1;
+    this.m = 1;
+    DCArray[0,0]=0;
+  }
+  public DemicalMatrix(uint s, uint s1){
+    DCArray =new decimal[s,s1];
+    this.n = s;
+    this.m = s1;
+    for (int i = 0; i < s; i++)
+    for (int j = 0; j < s1; j++) {
+      DCArray[i,j]=0;
+    }
+  }
+  public DemicalMatrix(uint s, uint s1, int k){
+    DCArray =new decimal[s,s1];
+    this.n = s;
+    this.m = s1;
+    for (int i = 0; i < s; i++)
+    for (int j = 0; j < s1; j++) {
+      DCArray[i,j]=k;
+    }
+  }
+  public void sh(){
+    Console.WriteLine("Ar: ");
+    for(int i =0;i<n;i++)
+      for(int j =0;j<m;j++){
+        Console.Write(DCArray[i,j]+" ");}
+    Console.WriteLine("N: "+n);
+    Console.WriteLine("M: "+m);
+    Console.WriteLine("CodeError: "+codeError);
+    Console.WriteLine("Num_mf: "+num_mf);
+  }
+  ~DemicalMatrix(){
+    Console.WriteLine("Destructor");
+  }
+  public void arinp(){
+      Console.WriteLine("Number of element: ");
+      int n = Convert.ToInt32(Console.ReadLine());
+      for(int i =0;i<n;i++) 
+      for(int j =0;j<m;j++){
+      DCArray[i,j]=Convert.ToDecimal(Console.ReadLine());
+  }}
+  public void arout(){
+
+    for (int i = 0; i < n; i++) for(int j =0;j<m;j++) {
+        Console.Write(DCArray[i,j]+" ");
+    }
+  }
+  public decimal[,] elem(decimal k){
+    for(int i =0;i<n;i++) 
+    for(int j =0;j<n;j++){
+    DCArray [i,j] = k;
+    }
+    return DCArray;
+  }
+   public int Arlen{
+    get{
+      return DCArray.Length;
+    }
+  }  
+  public int Er{
+    get{
+      return codeError;
+    }
+    set{
+      codeError = value;
+    }
+  }  
+
+  public decimal this[int ind]{
+    get{
+      if(ind<0||ind>=DCArray.Length) {
+        this.codeError=1;
+        return codeError;}
+      return DCArray [ind,ind];
+    }
+    
+  }
+
+  public static DemicalMatrix operator++ (DemicalMatrix t) {
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
+    t.DCArray [i,j] += 1;
+    }
+    return t;
+  }
+
+  public static DemicalMatrix operator-- (DemicalMatrix t) {
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
+    t.DCArray [i,j] -= 1;
+    }
+    return t;
+  }
+
+  public static explicit operator bool(DemicalMatrix t) {
+    int k=0;
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
+      if(t.DCArray [i,j] ==0) k++;
+    }
+    return ((t.n != 0)&&(t.m != 0))||(k == 0);
+  }
+
+  public static bool operator !(DemicalMatrix t) {
+    return ((t.n != 0)&&(t.m!=0));
+  }
+ 
+  public static DemicalMatrix operator ~(DemicalMatrix t) {
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++) {
+      t.DCArray [i,j] = (int)(t.DCArray[i,j]);
+    }
+    return t;
+  }
+
+  public static DemicalMatrix operator +(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+        t.DCArray[i,j] += c.DCArray[i,j];
+      return t;
+    }
+    return t;
+  }
+
+  public static DemicalMatrix operator +(DemicalMatrix t, int c){
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+      t.DCArray[i,j] += c;
+    return t;
+  }
+
+  public static DemicalMatrix operator -(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+        t.DCArray[i,j] -= c.DCArray[i,j];
+      return t;
+    }
+    return t;
+  }
+
+  public static DemicalMatrix operator -(DemicalMatrix t, int c){
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+      t.DCArray[i,j] -= c;
+    return t;
+  }
+
+  public static DemicalMatrix operator *(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+        t.DCArray[i,j] *= c.DCArray[i,j];
+      return t;
+    }
+    return t;
+  }
+
+  public static DemicalMatrix operator *(DemicalMatrix t, int c){
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+      t.DCArray[i,j] *= c;
+    return t;
+  }
+
+  public static DemicalMatrix operator /(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+        t.DCArray[i,j] /= c.DCArray[i,j];
+      return t;
+    }
+    return t;
+  }
+
+  public static DemicalMatrix operator /(DemicalMatrix t, int c){
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+      t.DCArray[i,j] /= c;
+    return t;
+  }
+
+  public static DemicalMatrix operator %(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+        t.DCArray[i,j] %= c.DCArray[i,j];
+      return t;
+    }
+    return t;
+  }
+
+  public static DemicalMatrix operator %(DemicalMatrix t, int c){
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+      t.DCArray[i,j] %= c;
+    return t;
+  }
+
+  public static DemicalMatrix operator |(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+        t.DCArray[i,j] =(char)(t.DCArray[i,j]) | (char)(c.DCArray[i,j]);
+      return t;
+    }
+    return t;
+  }
+
+  public static DemicalMatrix operator |(DemicalMatrix t, int c){
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+      t.DCArray[i,j] = (char)(t.DCArray[i,j]) | c;
+    return t;
+  }
+
+  public static DemicalMatrix operator ^(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+        t.DCArray[i,j] =(char)(t.DCArray[i,j]) ^ (char)(t.DCArray[i,j]);
+      return t;
+    }
+    return t;
+  }
+
+  public static DemicalMatrix operator ^(DemicalMatrix t, int c){
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+      t.DCArray[i,j] = (char)(t.DCArray[i,j]) ^ c;
+    return t;
+  }
+/*
+  public static VectorDecimal operator >>(VectorDecimal t, VectorDecimal c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+        t.DCArray[i,j] = t.DCArray[i,j] >> c.DCArray[i,j];
+      return t;
+    }
+    return t;
+    
+  }
+
+  public static VectorDecimal operator >> (VectorDecimal t, int c){
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+      t.DCArray[i,j] = (char)(t.DCArray[i,j]) >> c;
+    return t;
+  }
+ 
+  public static VectorDecimal operator <<(VectorDecimal t, VectorDecimal c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+        t.DCArray[i,j] = t.DCArray[i,j] << c.DCArray[i,j];
+      return t;
+    }
+    return t;
+  }
+*/
+  public static DemicalMatrix operator << (DemicalMatrix t, int c){
+    for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++)
+      t.DCArray[i,j] = (char)(t.DCArray[i,j]) << c;
+    return t;
+  }
+
+  public static bool operator ==(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
+      if(t.DCArray[i,j] == t.DCArray[i,j]) return true;
+      else return false;
+      }
+    }
+    return true;
+  }
+
+  public static bool operator !=(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
+      if(t.DCArray[i,j] != t.DCArray[i,j]) return true;
+      else return false;}
+    }
+    return true;
+  }
+
+  public static bool operator >(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
+      if(t.DCArray[i,j] > t.DCArray[i,j]) return true;
+      else return false;
+      }
+    }
+    return true;
+  }
+
+  public static bool operator >=(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
+      if(t.DCArray[i,j] >= t.DCArray[i,j]) return true;
+      else return false;
+      }
+    }
+    return true;
+  }
+
+  public static bool operator <(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
+      if(t.DCArray[i,j] < t.DCArray[i,j]) return true;
+      else return false;
+      }
+    }
+    return true;
+  }
+
+  public static bool operator <=(DemicalMatrix t, DemicalMatrix c){
+    if((t.n==c.n)&&(t.m==c.m)){
+      for(int i =0;i<t.n;i++) for(int j =0;j<t.m;j++){
+      if(t.DCArray[i,j] <= t.DCArray[i,j]) return true;
       else return false;
       }
     }
